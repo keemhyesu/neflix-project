@@ -8,8 +8,8 @@ import store from "./redux/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Provider>
-    <BrowserRouter store={store}>
+  <Provider store={store}>
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </Provider>
