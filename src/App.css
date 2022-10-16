@@ -25,3 +25,8 @@
   color: white;
   z-index: 1;
 }
+
+.card {
+  width: 300px;
+  min-height: 200px;
+}
