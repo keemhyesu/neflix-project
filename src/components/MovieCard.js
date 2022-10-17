@@ -1,9 +1,15 @@
 import React from "react";
 import Badge from "react-bootstrap/Badge";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const MovieCard = ({ item }) => {
   const { genreList } = useSelector((state) => state.movie);
+
+  const navigate = useNavigate();
+  const goToMovieDetail = (id) => {
+    navigate(`/movies/${item.id}`);
+  };
   return (
     <div
       className="card"
@@ -14,7 +20,7 @@ const MovieCard = ({ item }) => {
           ")",
       }}
     >
-      <div className="overlay">
+      <div className="overlay" onClick={goToMovieDetail}>
         <h1>{item.title}</h1>
         <div>
           {item.genre_ids.map((id, index) => (
